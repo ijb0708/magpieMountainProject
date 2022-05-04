@@ -1,10 +1,10 @@
-const app = require('./app');
-const http = require('http');
+import app from ('./app');
+import http from ('http');
 const server = http.createServer(app);
 
-const config = require('./config').server;
+// import { server } from './config'
 
-const PORT = process.env.PORT || config.port;
+const PORT = process.env.PORT || 6202
 
 server.listen(PORT, () => {
 

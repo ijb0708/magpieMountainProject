@@ -1,13 +1,11 @@
-const express = require('express');
-const app = express();
-
+import express from 'express';
 // modules
-const path = require('path');
-const bodyParser = require('body-parser');
-
+import path from 'path';
+import bodyParser from 'body-parser';
 // 설정파일
-const config = require('./config');
-const routes = require('./routes/index');
+import config from './config';
+import routes from './routes';
+const app = express();
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
