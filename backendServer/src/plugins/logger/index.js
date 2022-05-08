@@ -1,16 +1,15 @@
-const winston = require('winston');
-const winstonDaily = require('winston-daily-rotate-file');
-const wFormat = winston.format;
+import {createLogger, format, transports} from 'winston';
+import winstonDaily from 'winston-daily-rotate-file';
 
-module.exports = winston.createLogger({
-    format : wFormat.combine(
-        wFormat.timestamp({
+const logger = createLogger({
+    format : format.combine(
+        format.timestamp({
             format : 'YYYY-MM-DD HH:mm:ss'
         }),
-        wFormat.colorize({
+        format.colorize({
             all : true
         }),
-        wFormat.printf(
+        format.printf(
             (info) => info.timestamp + ' [' + info.level + '] ' + info.message
         )
     ),
@@ -24,8 +23,11 @@ module.exports = winston.createLogger({
             maxFiles: 30,  // 로그파일 저장기간
             zippedArchive: true, 
         }),
-        new winston.transports.Console({
+        new transports.Console({
             handleExceptions : true
         })
     ]
 });
+
+export default logger;
+    

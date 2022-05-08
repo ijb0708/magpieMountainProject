@@ -1,0 +1,18 @@
+
+{
+
+	"server":{
+		"port":6202
+	},
+	
+	"postgreSQL" : {
+		"host":"",
+		"user":"",
+		"password":"",
+		"database":"",
+		"prot":"",
+		"ssl":{
+			"rejectUnautherized" : false
+		}
+	}
+}

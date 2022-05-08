@@ -1,7 +1,8 @@
-import express from ('express');
-import logger from ('../plugins/loggers');
+import Router from 'express';
+import logger from '../plugins/logger/index.js';
 
-const router = express.Router();
+const router = Router();
+
 // routes List
 // const test = require('./test');
 
@@ -13,4 +14,4 @@ router.get('/', (req, res) => {
     res.send('현재 테스트 중입니다.');
 });
 
-module.exports = router;
+export default router;

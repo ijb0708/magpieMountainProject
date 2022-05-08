@@ -4,12 +4,12 @@ import express from 'express';
 //import bodyParser from 'body-parser';
 // 설정파일
 //import config from './config';
-//import routes from './routes';
+import routes from './routes/index.js';
 const app = express();
 
 //app.use(bodyParser.urlencoded({ extended: true }));
 //app.use(bodyParser.json());
 
-//app.use('/', routes);
+app.use('/', routes);
 export default app;
 //export default app;
