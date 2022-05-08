@@ -1,8 +1,7 @@
 import express from ('express');
-const router = express.Router();
-
 import logger from ('../plugins/loggers');
 
+const router = express.Router();
 // routes List
 // const test = require('./test');
 

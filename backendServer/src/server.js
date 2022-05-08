@@ -1,9 +1,9 @@
-import app from ('./app');
-import http from ('http');
+import app from "./app.js";
+import http from 'http';
+
+//import { server } from './config'
+
 const server = http.createServer(app);
-
-// import { server } from './config'
-
 const PORT = process.env.PORT || 6202
 
 server.listen(PORT, () => {

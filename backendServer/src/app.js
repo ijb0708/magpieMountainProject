@@ -1,15 +1,15 @@
 import express from 'express';
 // modules
-import path from 'path';
-import bodyParser from 'body-parser';
+//import path from 'path';
+//import bodyParser from 'body-parser';
 // 설정파일
-import config from './config';
-import routes from './routes';
+//import config from './config';
+//import routes from './routes';
 const app = express();
 
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
+//app.use(bodyParser.urlencoded({ extended: true }));
+//app.use(bodyParser.json());
 
-app.use('/', routes);
-
-module.exports = app;
+//app.use('/', routes);
+export default app;
+//export default app;
