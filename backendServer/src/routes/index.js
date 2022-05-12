@@ -12,7 +12,8 @@ router.use('/', test);
 // root routes
 router.get('/', (req, res) => {
     logger.info("come here");
-    res.send('현재 테스트 중입니다.');
+    //res.send('현재 테스트 중입니다.');
+    res.status(200).json({"test":"test"});
 });
 
 export default router;

@@ -3,6 +3,7 @@ import InvestMenu from './component/InvestMenu';
 import TopOnView from './component/TopOnView.js';
 import KoreaArea from './component/KoreaArea';
 import InputSearch from './component/InputSearch';
+import ShowTestData from './component/ShowTestData';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <InvestMenu ></InvestMenu>
       <KoreaArea></KoreaArea>
       <InputSearch></InputSearch>
+      <ShowTestData></ShowTestData>
     </div>
 
   );
