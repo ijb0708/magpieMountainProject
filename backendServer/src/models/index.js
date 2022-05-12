@@ -1,4 +1,7 @@
+import test from '.test/index.js'
 
-const dbConn = {};
+const dbConn = {
+    ...test
+}||{};
 
 export default dbConn;
