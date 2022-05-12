@@ -1,0 +1,19 @@
+.Area_btn{
+    display: block;
+}
+
+.Area_each_btn{
+    border: none;
+    color: black;
+    padding: 5px 5px;
+    text-align: center;
+    text-decoration: none;
+    
+    font-size: 12px;
+    margin: 4px;
+    cursor: pointer;
+    border-radius: 7px;
+    font-weight: bold;
+    float: left;
+    background-color: #CEF3B7;
+}

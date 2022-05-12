@@ -1,0 +1,29 @@
+.InvestList_btn_apt,
+.InvestList_btn_bun,
+.InvestList_btn_rent {
+    border: none;
+    color: black;
+    padding: 5px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: list-item;
+    font-size: 20px;
+    margin: 2px;
+    cursor: pointer;
+    border-radius: 10px;
+    font-weight: bold;
+    float: left;
+    display: block;
+  
+}
+
+.InvestList_btn_apt{
+    background-color: #CEF3B7;
+}
+.InvestList_btn_bun{
+    background-color: #D5ECF8;
+}
+.InvestList_btn_rent{
+    background-color: #F8E0F7;
+}
+
