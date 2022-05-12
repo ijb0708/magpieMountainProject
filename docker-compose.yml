@@ -1,4 +1,14 @@
 version: '3'
 services:
   db:
-    image: postgre
+    image: postgres:14
+    restart: always
+    environment:
+      - POSTGRES_PASSWORD="1234a"
+  backend:
+    image: centos:latest
+    restart: always
+    stdin_open: true
+    tty: true
+    depends_on:
+      - db

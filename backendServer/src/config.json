@@ -7,8 +7,8 @@
 		},
 		
 		"postgreSQL" : {
-			"host":"localhost",
-			"user":"dev",
+			"host":"db",
+			"user":"root",
 			"password":"1234a",
 			"database":"dev_base",
 			"port":"6204",
