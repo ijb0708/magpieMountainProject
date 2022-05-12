@@ -1,12 +1,13 @@
 import Router from 'express';
 import logger from '../plugins/logger/index.js';
 
+import test from './testData/index.js';
+
 const router = Router();
 
 // routes List
-// const test = require('./test');
 
-// router.use('/test', test);
+router.use('/', test);
 
 // root routes
 router.get('/', (req, res) => {

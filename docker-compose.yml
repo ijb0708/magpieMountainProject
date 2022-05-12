@@ -1,11 +1,15 @@
 version: '3'
 services:
   db:
+    container_name: db_Contaner
     image: postgres:14
     restart: always
     environment:
+      - POSTGRES_USER="user"
       - POSTGRES_PASSWORD="1234a"
+      - POSTGRES_DB="test"
   backend:
+    container_name: db_backEnd
     image: centos:latest
     restart: always
     stdin_open: true
