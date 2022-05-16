@@ -5,14 +5,14 @@ services:
     image: postgres:14
     restart: always
     environment:
-      - POSTGRES_USER="user"
-      - POSTGRES_PASSWORD="1234a"
-      - POSTGRES_DB="test"
+      - POSTGRES_USER=testid
+      - POSTGRES_PASSWORD=1234a
+      - POSTGRES_DB=test
   backend:
-    container_name: db_backEnd
-    image: centos:latest
+    container_name: backend
+    build: ./backendServer
     restart: always
-    stdin_open: true
-    tty: true
+    ports:
+      - 5000:3000
     depends_on:
       - db

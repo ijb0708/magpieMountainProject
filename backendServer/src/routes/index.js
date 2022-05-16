@@ -7,7 +7,7 @@ const router = Router();
 
 // routes List
 
-router.use('/', test);
+router.use('/test', test);
 
 // root routes
 router.get('/', (req, res) => {
