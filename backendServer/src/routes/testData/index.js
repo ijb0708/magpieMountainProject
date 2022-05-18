@@ -1,10 +1,18 @@
 import Router from 'express';
 import logger from '../../plugins/logger/index.js';
+import knex from '../../plugins/dbclient/index.js';
 
 const router = Router();
 
+router.get('/', (req, res) => {
+    logger.info("dommy!!");
+})
+
+router.get('/dbCon', (req, res) => {
+})
+
 // root routes
-router.get('/test', (req, res) => {
+router.get('/testData', (req, res) => {
     logger.info("dommy Data");
     res.status(200).json(
         [ 
