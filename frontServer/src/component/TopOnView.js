@@ -1,5 +1,4 @@
 import "./TopOnView.css";
-import axios from 'axios';
 
 const TopOnView = function (){
     return (

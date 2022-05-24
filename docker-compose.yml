@@ -1,5 +1,22 @@
-version: '3'
 services:
+
+  backend:
+    container_name: backend
+    build: 
+      context: ./backendServer
+      dockerfile: ./Dockerfile
+    # restart: always
+    ports:
+      - 8001:6202
+    environment:
+      - POSTGRES_USER=testid
+      - POSTGRES_PASSWORD=1234a
+      - POSTGRES_DB=test
+    networks:
+      - test_net
+    depends_on:
+      - db
+
   db:
     container_name: db_Contaner
     image: postgres:14
@@ -10,12 +27,11 @@ services:
       - POSTGRES_DB=test
     ports:
       - 5432:5432
+    volumes:
+      - ./dataBase/data:/var/lib/postgres
+    networks:
+      - test_net
 
-  # backend:
-  #   container_name: backend
-  #   build: ./backendServer
-  #   restart: always
-  #   ports:
-  #     - 5000:3000
-  #   depends_on:
-  #     - db
+networks:
+  test_net:
+    driver: bridge
