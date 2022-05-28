@@ -7,9 +7,6 @@ router.get('/', (req, res) => {
     logger.info("dommy!!");
 })
 
-router.get('/dbCon', (req, res) => {
-})
-
 // root routes
 router.get('/testData', (req, res) => {
     logger.info("dommy Danta");

@@ -1,13 +1,14 @@
 services:
 
-  backend:
-    container_name: backend
+  server:
+    container_name: server
     build: 
-      context: ./backendServer
-      dockerfile: ./Dockerfile
-    # restart: always
+      context: ./
+      dockerfile: Dockerfile-server
+    volumes:
+      - ./frontServer/build:/usr/src/app/build
     ports:
-      - 8001:6202
+      - 80:6202
     environment:
       - POSTGRES_USER=testid
       - POSTGRES_PASSWORD=1234a
@@ -16,6 +17,9 @@ services:
       - test_net
     depends_on:
       - db
+    tty: true
+    # restart: always
+    
 
   db:
     container_name: db_Contaner

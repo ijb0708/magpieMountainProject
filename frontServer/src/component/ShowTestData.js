@@ -6,7 +6,9 @@ function ShowTestData() {
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        axios("/test").then(response => setData(response.data));
+        axios("/test/testData").then(response => {
+            setData(response.data);
+        });
     }, []);
 
     return (
