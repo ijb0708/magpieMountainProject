@@ -1,13 +1,7 @@
 FROM node:12
-WORKDIR /usr/src/app/frontServer
-COPY ./frontServer/package.json ./
-RUN npm install
-COPY ./frontServer/ ./
-RUN npm run build
-WORKDIR /usr/src/app/backendServer
+WORKDIR /usr/src/app
 COPY ./backendServer/package.json ./
 RUN npm install
 COPY ./backendServer/ ./
-RUN mv /usr/src/app/frontServer/build /usr/src/app/backendServer/build
 EXPOSE 6202
 CMD ["npm", "test"]

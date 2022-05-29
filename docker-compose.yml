@@ -6,6 +6,8 @@ services:
     build: 
       context: ./
       dockerfile: Dockerfile-server
+    volumes:
+      - ./frontServer:/usr/src/app/frontServer
     ports:
       - 80:6202
     environment:
