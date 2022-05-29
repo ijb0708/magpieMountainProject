@@ -49,7 +49,7 @@ app.use(express.static(path.join(__dirname, '/build/')));
 
 // root routes
 app.get('/', (req, res) => {
-    res.send(path.join(__dirname, '/build/index.html'));
+    res.send(express.static(path.join(__dirname, '/build/index.html')));
 });
 
 app.use('/', routes);
