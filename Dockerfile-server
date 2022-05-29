@@ -1,5 +1,8 @@
 FROM node:12
-WORKDIR /usr/src/app
+WORKDIR /usr/src/app/frontServer
+RUN npm run build
+RUN mv ./build /usr/src/app/backendServer/build
+WORKDIR /usr/src/app/backendServer
 COPY ./backendServer/package.json ./
 RUN npm install
 COPY ./backendServer/ ./

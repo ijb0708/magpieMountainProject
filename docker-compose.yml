@@ -6,7 +6,7 @@ services:
       context: ./
       dockerfile: Dockerfile-server
     volumes:
-      - ./frontServer/build:/usr/src/app/build
+      - ./frontServer:/usr/src/app/frontServer
     ports:
       - 80:6202
     environment:
@@ -18,7 +18,7 @@ services:
     depends_on:
       - db
     tty: true
-    # restart: always
+    restart: always
     
 
   db:
