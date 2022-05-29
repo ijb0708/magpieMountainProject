@@ -13,7 +13,6 @@ import logger from './plugins/logger/index.js';
 const __dirname = path.resolve();
 
 console.log(__dirname);
-console.log(path.join(__dirname, '../frontServer/build/index.html'));
 
 const app = express();
 
@@ -42,12 +41,12 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 // 프론트서버 및 라우터 설정
-    console.log(path.join(__dirname, '/build/'));
+logger.error(path.join(__dirname, '/build/'));
 app.use(express.static(path.join(__dirname, '/build/')));
 
 // root routes
 app.get('/', (req, res) => {
-    console.log(path.join(__dirname, '/build/index.html'));
+    logger.error(path.join(__dirname, '/build/index.html'));
     res.sendFile(path.join(__dirname, '/build/index.html'));
 });
 
