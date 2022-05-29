@@ -12,8 +12,6 @@ import logger from './plugins/logger/index.js';
 
 const __dirname = path.resolve();
 
-console.log(__dirname);
-
 const app = express();
 
 // DB연결
@@ -47,13 +45,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 // 프론트서버 및 라우터 설정
-logger.error(path.join(__dirname, '/build/'));
 app.use(express.static(path.join(__dirname, '/build/')));
 
 // root routes
 app.get('/', (req, res) => {
-    logger.error(path.join(__dirname, '/build/index.html'));
-    res.sendFile(path.join(__dirname, '/build/index.html'));
+    res.send(path.join(__dirname, '/build/index.html'));
 });
 
 app.use('/', routes);
