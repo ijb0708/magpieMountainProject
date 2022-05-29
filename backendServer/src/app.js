@@ -3,7 +3,7 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import helmet from 'helmet';
 import cors from 'cors';
-import path from 'path'
+import path from 'path';
 // 설정파일
 //import config from './config';
 import routes from './routes/index.js';
@@ -22,12 +22,6 @@ pool.connect(err => {
         logger.info("db connection success!!");
     }
 });
-
-app.use(function(req, res, next) {
-    res.header("Cross-Origin-Embedder-Policy", "require-corp");
-    res.header("Cross-Origin-Opener-Policy", "same-origin");
-    next();
-})
 
 // 
 app.use(cors({
@@ -49,7 +43,9 @@ app.use(express.static(path.join(__dirname, '/build/')));
 
 // root routes
 app.get('/', (req, res) => {
-    res.send(express.static(path.join(__dirname, '/build/index.html')));
+    res.header("Cross-Origin-Embedder-Policy", "require-corp");
+    res.header("Cross-Origin-Opener-Policy", "same-origin");
+    res.sendFile(express.static(path.join(__dirname, '/build/index.html')));
 });
 
 app.use('/', routes);
