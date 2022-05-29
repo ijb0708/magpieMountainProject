@@ -31,6 +31,7 @@ app.use(cors({
     origin:[
         "http://localhost:6202",
         "http://localhost:3000",
+        "http://localhost:80",
     ]
 }))
 
@@ -41,10 +42,12 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 // 프론트서버 및 라우터 설정
-app.use(express.static(path.join(__dirname, '/build')));
+    console.log(path.join(__dirname, '/build/'));
+app.use(express.static(path.join(__dirname, '/build/')));
 
 // root routes
 app.get('/', (req, res) => {
+    console.log(path.join(__dirname, '/build/index.html'));
     res.sendFile(path.join(__dirname, '/build/index.html'));
 });
 
