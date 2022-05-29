@@ -1,6 +1,6 @@
 FROM node:12
 WORKDIR /usr/src/app
-COPY ./backendServer/package.json ./
+COPY ./backendServer/package*.json ./
 RUN npm install --save
 COPY ./backendServer/ ./
 EXPOSE 6202
