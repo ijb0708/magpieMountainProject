@@ -42,7 +42,7 @@ app.use(express.static(path.join(__dirname, '/build/')));
 app.get('/', (req, res) => {
     res.header("Cross-Origin-Embedder-Policy", "require-corp");
     res.header("Cross-Origin-Opener-Policy", "same-origin");
-    res.sendFile(express.static(path.join(__dirname, '/build/index.html')));
+    res.send(path.join(__dirname, '/build/index.html'));
 });
 
 app.use('/', routes);
