@@ -3,5 +3,6 @@ WORKDIR /usr/src/app
 COPY ./backendServer/package*.json ./
 RUN npm install --save
 COPY ./backendServer/ ./
+COPY ./frontServer/build /usr/src/app/build
 EXPOSE 6202
 CMD ["npm", "test"]
