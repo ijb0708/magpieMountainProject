@@ -32,9 +32,6 @@ app.use(cors({
     ]
 }))
 
-//보안설정
-app.use(helmet()); 
-
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
